@@ -42,6 +42,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+
 @Composable
 fun RequestStoragePermission() {
     val permissionLauncher = rememberLauncherForActivityResult(
@@ -58,6 +59,7 @@ fun RequestStoragePermission() {
         }
     }
 }
+
 
 @RequiresApi(Build.VERSION_CODES.Q)
 @Composable
@@ -100,6 +102,7 @@ fun FilePickerScreen() {
     }
 }
 
+
 fun getFileName(context: Context, uri: Uri): String {
     var name = "Unknown"
     val cursor = context.contentResolver.query(uri, null, null, null, null)
@@ -113,6 +116,7 @@ fun getFileName(context: Context, uri: Uri): String {
     }
     return name
 }
+
 
 @RequiresApi(Build.VERSION_CODES.Q)
 fun downloadFile(context: Context, uri: Uri, fileName: String) {
@@ -148,12 +152,14 @@ fun downloadFile(context: Context, uri: Uri, fileName: String) {
     }
 }
 
+
 fun openPreviewScreen(context: Context, uri: Uri) {
     val intent = Intent(context, PreviewActivity::class.java).apply {
         putExtra("fileUri", uri.toString())
     }
     context.startActivity(intent)
 }
+
 
 class PreviewActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -164,6 +170,7 @@ class PreviewActivity : ComponentActivity() {
         }
     }
 }
+
 
 @Composable
 fun PreviewScreen(fileUri: Uri) {
@@ -201,9 +208,11 @@ fun PreviewScreen(fileUri: Uri) {
     }
 }
 
+
 @RequiresApi(Build.VERSION_CODES.Q)
 @Preview(showBackground = true)
 @Composable
 fun FilePickerPreview() {
     FilePickerScreen()
 }
+
