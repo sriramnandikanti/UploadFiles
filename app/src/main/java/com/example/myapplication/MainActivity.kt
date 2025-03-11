@@ -42,7 +42,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-// method to give permissions
+// Code for Requesting permissions
 @Composable
 fun RequestStoragePermission() {
     val permissionLauncher = rememberLauncherForActivityResult(
@@ -171,7 +171,7 @@ class PreviewActivity : ComponentActivity() {
     }
 }
 
-
+//Code for Preview Screen
 @Composable
 fun PreviewScreen(fileUri: Uri) {
     val context = LocalContext.current
@@ -208,7 +208,7 @@ fun PreviewScreen(fileUri: Uri) {
     }
 }
 
-
+//preview
 @RequiresApi(Build.VERSION_CODES.Q)
 @Preview(showBackground = true)
 @Composable
