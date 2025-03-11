@@ -64,7 +64,7 @@ fun RequestStoragePermission() {
 @RequiresApi(Build.VERSION_CODES.Q)
 @Composable
 fun FilePickerScreen() {
-    var fileName by remember { mutableStateOf("No file selected") }
+    var fileName by remember { mutableStateOf("${R.string.no_file_selected}") }
     var fileUri by remember { mutableStateOf<Uri?>(null) }
     val context = LocalContext.current
 
@@ -83,21 +83,21 @@ fun FilePickerScreen() {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Button(onClick = { filePickerLauncher.launch("*/*") }) {
-            Text(text = "Upload Files")
+            Text(text = "${R.string.upload_files}")
         }
         Spacer(modifier = Modifier.height(16.dp))
         Text(text = fileName)
         Spacer(modifier = Modifier.height(16.dp))
         Button(onClick = { fileUri?.let { downloadFile(context, it, fileName) } }, enabled = fileUri != null) {
-            Icon(painter = painterResource(id = R.drawable.download), contentDescription = "Download")
+            Icon(painter = painterResource(id = R.drawable.download), contentDescription = "${R.string.download}")
             Spacer(modifier = Modifier.width(8.dp))
-            Text(text = "Download")
+            Text(text = "${R.string.download}")
         }
         Spacer(modifier = Modifier.height(16.dp))
         Button(onClick = { fileUri?.let { openPreviewScreen(context, it) } }, enabled = fileUri != null) {
-            Icon(painter = painterResource(id = R.drawable.preview), contentDescription = "Preview")
+            Icon(painter = painterResource(id = R.drawable.preview), contentDescription = "${R.string.preview}")
             Spacer(modifier = Modifier.width(8.dp))
-            Text(text = "Preview")
+            Text(text = "${R.string.preview}")
         }
     }
 }

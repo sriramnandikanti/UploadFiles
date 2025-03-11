@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">UploadingFiles</string>
+    <string name="no_file_selected">No File Selected</string>
+    <string name="upload_files">Upload Files</string>
+    <string name="download">Download</string>
+    <string name="preview">Preview</string>
 </resources>
